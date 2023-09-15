@@ -1,0 +1,25 @@
+th,
+td,
+.date {
+  border: 1px solid black;
+  min-width: 3em;
+  height: 1.5em;
+  text-align: center;
+}
+.dateFirst {
+  background-color: gray;
+  color: white;
+}
+.dateFirst:hover,
+th:hover {
+  background-color: aqua;
+  cursor: pointer;
+}
+.clickDay {
+  background-color: red !important;
+  color: black !important;
+}
+.clickDay:hover {
+  background-color: red;
+  cursor: pointer;
+}

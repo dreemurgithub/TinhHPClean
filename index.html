@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="output.js" defer></script>
+    <script src="functionHTML.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <button onclick="FirstDate()">Get Date 1st</button>
+    <button onclick="Total()">Get Total + log</button>
+    <button onclick="GetAllSlot()">Get All Array</button>
+    <button onclick="OutPutDate()">Test output</button>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">CN</th>
+          <th scope="col">T2</th>
+          <th scope="col">T3</th>
+          <th scope="col">T4</th>
+          <th scope="col">T5</th>
+          <th scope="col">T6</th>
+          <th scope="col">T7</th>
+        </tr>
+      </thead>
+      <tbody class="table-group-divider">
+        <tr>
+          <td class="dateFirst"></td>
+          <td class="dateFirst"></td>
+          <td class="dateFirst"></td>
+          <td class="dateFirst"></td>
+          <td class="dateFirst"></td>
+          <td class="dateFirst"></td>
+          <td class="dateFirst"></td>
+        </tr>
+        <tr>
+          <td class="dateFirst"></td>
+          <td class="dateFirst"></td>
+          <td class="dateFirst"></td>
+          <td class="dateFirst"></td>
+          <td class="dateFirst"></td>
+          <td class="dateFirst"></td>
+          <td class="dateFirst"></td>
+        </tr>
+        <tr>
+          <td class="dateFirst"></td>
+          <td class="dateFirst"></td>
+          <td class="dateFirst"></td>
+          <td class="dateFirst"></td>
+          <td class="dateFirst"></td>
+          <td class="dateFirst"></td>
+          <td class="dateFirst"></td>
+        </tr>
+        <tr>
+          <td class="dateFirst"></td>
+          <td class="dateFirst"></td>
+          <td class="dateFirst"></td>
+          <td class="dateFirst"></td>
+          <td class="dateFirst"></td>
+          <td class="dateFirst"></td>
+          <td class="dateFirst"></td>
+        </tr>
+        <tr>
+          <td class="dateFirst"></td>
+          <td class="dateFirst"></td>
+          <td class="dateFirst"></td>
+          <td class="dateFirst"></td>
+          <td class="dateFirst"></td>
+          <td class="dateFirst"></td>
+          <td class="dateFirst"></td>
+        </tr>
+      </tbody>
+    </table>
+    <table>
+      <tbody>
+        <tr>
+          <td class="date"></td>
+          <td class="date"></td>
+          <td class="date"></td>
+          <td class="date"></td>
+          <td class="date"></td>
+          <td class="date"></td>
+          <td class="date"></td>
+          <td class="date"></td>
+          <td class="date"></td>
+        </tr>
+        <tr>
+          <td class="date"></td>
+          <td class="date"></td>
+          <td class="date"></td>
+          <td class="date"></td>
+          <td class="date"></td>
+          <td class="date"></td>
+          <td class="date"></td>
+          <td class="date"></td>
+          <td class="date"></td>
+        </tr>
+        <tr>
+          <td class="date"></td>
+          <td class="date"></td>
+          <td class="date"></td>
+          <td class="date"></td>
+          <td class="date"></td>
+          <td class="date"></td>
+          <td class="date"></td>
+          <td class="date"></td>
+          <td class="date"></td>
+        </tr>
+        <tr>
+          <td class="date"></td>
+          <td class="date"></td>
+          <td class="date"></td>
+          <td class="date"></td>
+          <td class="date"></td>
+          <td class="date"></td>
+          <td class="date"></td>
+          <td class="date"></td>
+          <td class="date"></td>
+        </tr>
+        <tr>
+          <td class="date"></td>
+          <td class="date"></td>
+          <td class="date"></td>
+          <td class="date"></td>
+          <td class="date"></td>
+          <td class="date"></td>
+          <td class="date"></td>
+          <td class="date"></td>
+          <td class="date"></td>
+        </tr>
+        <tr>
+          <td class="date"></td>
+          <td class="date"></td>
+          <td class="date"></td>
+          <td class="date"></td>
+          <td class="date"></td>
+          <td class="date"></td>
+          <td class="date"></td>
+          <td class="date"></td>
+          <td class="date"></td>
+        </tr>
+      </tbody>
+    </table>
+    <table>
+      <tbody>
+        <tr>
+          <th>CN</th>
+          <td class="view0"></td>
+          <td class="view0"></td>
+          <td class="view0"></td>
+          <td class="view0"></td>
+          <td class="view0"></td>
+          <td class="view0"></td>
+          <td class="view0"></td>
+          <td class="view0"></td>
+        </tr>
+        <tr>
+          <th>T2</th>
+          <td class="view1"></td>
+          <td class="view1"></td>
+          <td class="view1"></td>
+          <td class="view1"></td>
+          <td class="view1"></td>
+          <td class="view1"></td>
+          <td class="view1"></td>
+          <td class="view1"></td>
+        </tr>
+        <tr>
+          <th>T3</th>
+          <td class="view2"></td>
+          <td class="view2"></td>
+          <td class="view2"></td>
+          <td class="view2"></td>
+          <td class="view2"></td>
+          <td class="view2"></td>
+          <td class="view2"></td>
+          <td class="view2"></td>
+        </tr>
+        <tr>
+          <th>T4</th>
+          <td class="view3"></td>
+          <td class="view3"></td>
+          <td class="view3"></td>
+          <td class="view3"></td>
+          <td class="view3"></td>
+          <td class="view3"></td>
+          <td class="view3"></td>
+          <td class="view3"></td>
+        </tr>
+        <tr>
+          <th>T5</th>
+          <td class="view4"></td>
+          <td class="view4"></td>
+          <td class="view4"></td>
+          <td class="view4"></td>
+          <td class="view4"></td>
+          <td class="view4"></td>
+          <td class="view4"></td>
+          <td class="view4"></td>
+        </tr>
+        <tr>
+          <th>T6</th>
+          <td class="view5"></td>
+          <td class="view5"></td>
+          <td class="view5"></td>
+          <td class="view5"></td>
+          <td class="view5"></td>
+          <td class="view5"></td>
+          <td class="view5"></td>
+          <td class="view5"></td>
+        </tr>
+        <tr>
+          <th>T7</th>
+          <td class="view6"></td>
+          <td class="view6"></td>
+          <td class="view6"></td>
+          <td class="view6"></td>
+          <td class="view6"></td>
+          <td class="view6"></td>
+          <td class="view6"></td>
+          <td class="view6"></td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
