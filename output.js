@@ -36,7 +36,10 @@ function OutPutDate() {
 }
 
 function iterateDateHTML() {
-    listDateTable.forEach((el, index) => el.textContent = dateDisplay(index - 12))
+    const currentDay = new Date()
+    let day = currentDay.getDay()
+    if (day === 0) day = 7
+    listDateTable.forEach((el, index) => el.textContent = dateDisplay(index - 7 - day))
 
 }
 iterateDateHTML()

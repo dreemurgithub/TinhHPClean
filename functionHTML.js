@@ -23,8 +23,8 @@ class CalTime {
         item.sort((a, b) => a - b)
         this.weekSlot = item
     }
-    getTotal(item) {
-        this.total = item
+    getTotal(day) {
+        this.total = day
     }
     returnArrayList() {
         if (!this.total || !this.weekSlot || !this.weekSlot.length) return
@@ -69,11 +69,11 @@ function FirstDate() {
 }
 
 function Total() {
-    let item = 20
-    NewCalTime.getTotal(item)
+    let day = 20
+    NewCalTime.getTotal(day)
     console.log(NewCalTime.readprops())
 
-    return item
+    return day
 }
 
 function GetAllSlot() {
