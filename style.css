@@ -1,14 +1,10 @@
-th,
-td,
-.date {
-  border: 1px solid black;
-  min-width: 3em;
-  height: 1.5em;
-  text-align: center;
+body {
+  overflow-y: none;
 }
 .dateFirst {
   background-color: gray;
   color: white;
+  /* width: 2em; */
 }
 .dateFirst:hover,
 th:hover {
@@ -22,4 +18,13 @@ th:hover {
 .clickDay:hover {
   background-color: red;
   cursor: pointer;
+}
+.infor,
+.date {
+  /* width: 2em; */
+  border: 1px solid black;
+  font-size: smaller;
+}
+th {
+  width: 0.5em;
 }

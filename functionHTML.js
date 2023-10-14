@@ -27,6 +27,15 @@ class CalTime {
         this.total = day
     }
     returnArrayList() {
+        this.weekDayList = {
+            '0': [],
+            '1': [],
+            '2': [],
+            '3': [],
+            '4': [],
+            '5': [],
+            '6': [],
+        }
         if (!this.total || !this.weekSlot || !this.weekSlot.length) return
         if (!this.firstDay || !this.firstDay.getDate() || !this.weekSlot.includes(this.firstDay.getDay())) return []
         let width = this.weekSlot.length
@@ -41,14 +50,15 @@ class CalTime {
         }
         let lengthArrweek = this.weekSlot.length;
         while (totalUp < this.total) {
-            let weekDayIn = totalUp % lengthArrweek
-            this.weekDayList[`${weekDayIn}`].push(arrAllLong[totalUp])
+            // example: [0,3,4]
+            // day 0 => 0, day 2 =>> 4, day 6 => 0, day 10 => 3
+            let weekListIndex = totalUp % lengthArrweek
+            this.weekDayList[`${this.weekSlot[weekListIndex]}`].push(arrAllLong[totalUp])
             // this.weekDayList[`${weekDayIn}`].push(this.weekSlot[weekDayIn] + totalUp * 7)
             arrayOutPut.push(arrAllLong[totalUp])
             totalUp += 1
         }
-        // console.log(arrayOutPut)
-        // console.log(arrAllLong)
+        // console.log(this.weekDayList)
         return arrayOutPut
 
     }
@@ -62,25 +72,24 @@ class CalTime {
 }
 
 const NewCalTime = new CalTime
-function FirstDate() {
-    const time = new Date()
-    NewCalTime.getFirstDate(time)
-    return time
-}
 
 function Total() {
-    let day = 20
+    let day = document.querySelector('#days').value ? parseInt(document.querySelector('#days').value) : 0;
     NewCalTime.getTotal(day)
-    console.log(NewCalTime.readprops())
+    // console.log(NewCalTime.readprops())
 
-    return day
+    // return day
 }
 
-function GetAllSlot() {
-    const item = [2, 3, 0]
+function GetAllSlot(day) {
+    const List = [...document.querySelectorAll('.arrayWeek')]
+    if (!List[day].className.includes('clickDay')) List[day].className = `${List[day].className} clickDay`
+    else List[day].className = 'arrayWeek'
+
+    const item = NewCalTime.weekSlot ? NewCalTime.weekSlot : []
+    let index = item.indexOf(day)
+    if ((day || day === 0) && index === -1) item.push(day)
+    if (index > -1) item.splice(index, 1) // remove the day
     NewCalTime.getAllSlot(item)
-    return [0, 2, 3]
+    // console.log(NewCalTime.readprops())
 }
-
-// export { FirstDate, Total, GetAllSlot }
-// export { NewCalTime }

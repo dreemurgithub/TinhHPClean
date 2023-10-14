@@ -14,16 +14,26 @@ function dateIterate(day) {
 }
 
 function OutPutDate() {
+    const listWeek = [...document.getElementsByClassName('infor')]
+    listWeek.forEach(el => el.textContent = '')
+    Total() // get date
     const Arr = NewCalTime.returnArrayList()
     // return [] if the weekday is not inside the array
-    console.log(Arr)
-    if (!Arr || Arr.length === 0) return;
+    if (!Arr || Arr.length === 0) return; // get aray inside the class
     const textArrUnOrder = Arr.map(day => `${dateIterate(day)}`)
+    console.log(textArrUnOrder)
 
     const textArrOrder = Object.keys(NewCalTime.weekDayList)
+    console.log(NewCalTime.weekDayList)
+    console.log(NewCalTime.weekSlot)
     textArrOrder.forEach((key, weekIndex) => {
         const List = [...document.querySelectorAll(`.view${weekIndex}`)]
+        // console.log(List)
+        // List.forEach(el => el.textContent = '')
         NewCalTime.weekDayList[key].forEach((day, index) => {
+            // console.log(List[index])
+            if (!List[index]) return
+            // console.log(dateIterate(day))
             List[index].textContent = dateIterate(day)
         })
     })
@@ -31,8 +41,8 @@ function OutPutDate() {
     textArrUnOrder.forEach((day, index) => {
         ListUnOrder[index].textContent = day
     })
-    console.log(textArrUnOrder)
-    console.log(NewCalTime.weekDayList)
+    // console.log(textArrUnOrder)
+    // console.log(NewCalTime.weekDayList)
 }
 
 function iterateDateHTML() {
