@@ -21,11 +21,11 @@ function OutPutDate() {
     // return [] if the weekday is not inside the array
     if (!Arr || Arr.length === 0) return; // get aray inside the class
     const textArrUnOrder = Arr.map(day => `${dateIterate(day)}`)
-    console.log(textArrUnOrder)
+    // console.log(textArrUnOrder)
 
     const textArrOrder = Object.keys(NewCalTime.weekDayList)
-    console.log(NewCalTime.weekDayList)
-    console.log(NewCalTime.weekSlot)
+    // console.log(NewCalTime.weekDayList)
+    // console.log(NewCalTime.weekSlot)
     textArrOrder.forEach((key, weekIndex) => {
         const List = [...document.querySelectorAll(`.view${weekIndex}`)]
         // console.log(List)
