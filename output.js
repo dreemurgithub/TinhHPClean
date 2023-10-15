@@ -10,7 +10,7 @@ function dateDisplay(day) {
 function dateIterate(day) {
     const currentNow = new Date(NewCalTime.firstDay)
     currentNow.setDate(currentNow.getDate() + day)
-    return `${currentNow.getDate()}:${currentNow.getMonth() + 1}`
+    return `${currentNow.getDate() - 1}:${currentNow.getMonth() + 1}`
 }
 
 function OutPutDate() {

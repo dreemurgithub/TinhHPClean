@@ -40,34 +40,37 @@ class CalTime {
         if (!this.firstDay || !this.firstDay.getDate() || !this.weekSlot.includes(this.firstDay.getDay())) return []
         let width = this.weekSlot.length
         let arrayOutPut = []
-        let totalUp = 0
         const arrAllLong = []
-        for (let i = 0; i < this.maxCountWeek; i++) {
-            for (let k = 0; k < this.weekSlot.length; k++) {
-                arrAllLong.push(this.weekSlot[k] + i * 7)
-
-            }
+        let index = this.weekSlot.indexOf(this.firstDay.getDay())
+        for (let k = index; k < this.weekSlot.length; k++) {
+            arrAllLong.push(this.weekSlot[k])
         }
+        for (let i = 1; i < this.total; i++) {
+            for (let k = 0; k < this.weekSlot.length; k++) {
+                // if (i === 0) k = index
+                let dayNumber = this.weekSlot[k] + i * 7
+                arrAllLong.push(dayNumber)
+            }
+            // alert(arrAllLong)
+        }
+        let totalUp = 0
         let lengthArrweek = this.weekSlot.length;
         while (totalUp < this.total) {
             // example: [0,3,4]
             // day 0 => 0, day 2 =>> 4, day 6 => 0, day 10 => 3
             let weekListIndex = totalUp % lengthArrweek
-            this.weekDayList[`${this.weekSlot[weekListIndex]}`].push(arrAllLong[totalUp])
+            let keyWeekDay = arrAllLong[totalUp] % 7
+            this.weekDayList[`${keyWeekDay}`].push(arrAllLong[totalUp])
             // this.weekDayList[`${weekDayIn}`].push(this.weekSlot[weekDayIn] + totalUp * 7)
             arrayOutPut.push(arrAllLong[totalUp])
             totalUp += 1
         }
-        // console.log(this.weekDayList)
+        console.log(this.weekDayList)
         return arrayOutPut
 
     }
     readprops() {
         return [this.firstDay, this.total, this.weekSlot, this.weekDayList]
-    }
-
-    outputTables() {
-        return 'aaa'
     }
 }
 
@@ -78,7 +81,7 @@ function Total() {
     NewCalTime.getTotal(day)
     // console.log(NewCalTime.readprops())
 
-    // return day
+    // notet: if the firstday's is not the same as the firstday in schedule, there is a mismatch, need to fix
 }
 
 function GetAllSlot(day) {
