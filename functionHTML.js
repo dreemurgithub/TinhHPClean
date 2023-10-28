@@ -65,7 +65,6 @@ class CalTime {
             arrayOutPut.push(arrAllLong[totalUp])
             totalUp += 1
         }
-        console.log(this.weekDayList)
         return arrayOutPut
 
     }
@@ -79,8 +78,6 @@ const NewCalTime = new CalTime
 function Total() {
     let day = document.querySelector('#days').value ? parseInt(document.querySelector('#days').value) : 0;
     NewCalTime.getTotal(day)
-    // console.log(NewCalTime.readprops())
-
     // notet: if the firstday's is not the same as the firstday in schedule, there is a mismatch, need to fix
 }
 
@@ -94,5 +91,4 @@ function GetAllSlot(day) {
     if ((day || day === 0) && index === -1) item.push(day)
     if (index > -1) item.splice(index, 1) // remove the day
     NewCalTime.getAllSlot(item)
-    // console.log(NewCalTime.readprops())
 }

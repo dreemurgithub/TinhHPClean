@@ -9,8 +9,9 @@ function dateDisplay(day) {
 
 function dateIterate(day) {
     const currentNow = new Date(NewCalTime.firstDay)
-    currentNow.setDate(currentNow.getDate() + day)
-    return `${currentNow.getDate() - 1}:${currentNow.getMonth() + 1}`
+    // currentNow.setDate(day)
+    currentNow.setDate(currentNow.getDate() + day - currentNow.getDay())
+    return `${currentNow.getDate()}:${currentNow.getMonth() + 1}`
 }
 
 function OutPutDate() {
@@ -18,22 +19,18 @@ function OutPutDate() {
     listWeek.forEach(el => el.textContent = '')
     Total() // get date
     const Arr = NewCalTime.returnArrayList()
+
+    // console.log(Arr)
+    // console.log(NewCalTime.firstDay)
     // return [] if the weekday is not inside the array
     if (!Arr || Arr.length === 0) return; // get aray inside the class
     const textArrUnOrder = Arr.map(day => `${dateIterate(day)}`)
-    // console.log(textArrUnOrder)
 
     const textArrOrder = Object.keys(NewCalTime.weekDayList)
-    // console.log(NewCalTime.weekDayList)
-    // console.log(NewCalTime.weekSlot)
     textArrOrder.forEach((key, weekIndex) => {
         const List = [...document.querySelectorAll(`.view${weekIndex}`)]
-        // console.log(List)
-        // List.forEach(el => el.textContent = '')
         NewCalTime.weekDayList[key].forEach((day, index) => {
-            // console.log(List[index])
             if (!List[index]) return
-            // console.log(dateIterate(day))
             List[index].textContent = dateIterate(day)
         })
     })
@@ -41,8 +38,6 @@ function OutPutDate() {
     textArrUnOrder.forEach((day, index) => {
         ListUnOrder[index].textContent = day
     })
-    // console.log(textArrUnOrder)
-    // console.log(NewCalTime.weekDayList)
 }
 
 function iterateDateHTML() {
